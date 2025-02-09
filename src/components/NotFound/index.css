@@ -1,0 +1,47 @@
+.WholeNotFoundPage {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.NotFoundContainer {
+  height: 67%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notFoundImage {
+  width: 30%;
+  height: 50%;
+}
+
+.pageNotFoundHeading {
+  font-weight: 500;
+  font-size: 35px;
+  font-family: 'Roboto';
+  line-height: 48px;
+  margin-bottom: 10px;
+}
+
+.pageNotFoundpara {
+  color: #989898;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 32px;
+  margin-bottom: 15px;
+}
+
+.HomepageButton {
+  background-color: #4094ef;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}

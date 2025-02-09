@@ -1,0 +1,105 @@
+.WholePost {
+  padding: 20px 0px;
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+.UserNameOnPostWithImageDiv {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  height: 5%;
+  margin-left: 5%;
+  margin-bottom: 11px;
+}
+.ImageContainer {
+  background-image: linear-gradient(to right, #e20337, #c60188, #7700c3);
+  padding: 2px;
+  border-radius: 50%;
+  display: flex;
+  height: 90%;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.userImageOnPost {
+  width: 50px;
+  height: 50px;
+  border: 4px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.userNameOnPost {
+  color: #262626;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.PostImageHolder {
+  align-self: center;
+  width: 90%;
+  height: 50%;
+  background-color: transparent;
+  display: flex;
+  padding: 15px 0px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd; /* Add border to the image container */
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.LikeCommentsHolder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 7%;
+  width: 20%;
+}
+
+.noOfLikes {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin-left: 5%;
+  margin-bottom: -10px;
+}
+.postCaption {
+  font-size: 17px;
+  font-family: 'Roboto';
+  line-height: 18px;
+  margin-left: 5%;
+  margin-bottom: -5px;
+}
+.commentedUsername {
+  font-weight: bold;
+  font-size: 15px;
+  margin-right: 10px;
+}
+.commentOFPost {
+  margin-left: 5%;
+  font-size: 15px;
+  margin-bottom: -5px;
+}
+.PostedTime {
+  margin-left: 5%;
+  color: #989898;
+  font-size: 16px;
+}

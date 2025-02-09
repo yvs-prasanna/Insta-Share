@@ -1,0 +1,18 @@
+.WholeProflePage {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafafa;
+}
+.LoaderContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding-top: 40%;
+}
+
+.loader {
+  margin-top: 10%;
+}

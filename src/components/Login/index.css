@@ -1,0 +1,106 @@
+.dog-ear {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: blue;
+}
+
+.dog-ear-top-left {
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.dog-ear-top-right {
+  top: 0;
+  right: 0;
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+}
+.loginPage {
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.loginBlock {
+  width: 80%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2%;
+}
+.loginForm {
+  width: 30%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow:
+    3px 5px 8px 0,
+    0px 5px 8px 0;
+}
+input {
+  width: 80%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background: #eeeeee;
+  border: none;
+}
+label {
+  color: black;
+  align-self: flex-start;
+  font-weight: bold;
+  font-size: 12px;
+  margin-left: 8%;
+}
+.logoHandler {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.logoImg {
+  width: 58%;
+  height: 90%;
+  margin-bottom: -10px;
+}
+
+.ImageonLoginpage {
+  width: 45%;
+  height: 75%;
+  background-color: transparent;
+}
+
+.login-button {
+  background: #4094ef;
+  color: white;
+  padding: 10px;
+  width: 85%;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.message {
+  align-self: flex-start;
+  margin-left: 8%;
+  font-weight: bold;
+  color: #ef4444;
+  font-size: 13px;
+  margin-top: -10px;
+}

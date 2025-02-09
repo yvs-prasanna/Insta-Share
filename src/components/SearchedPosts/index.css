@@ -1,0 +1,53 @@
+.WHolePageWithheader {
+  background-color: #fafafa;
+  margin: 0px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchPostsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8%;
+  width: 100%;
+}
+
+.WholepageOfSearchedPost {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-radius: 1px solid black;
+}
+
+.PostsBlock {
+  width: 80%;
+}
+
+.LoaderContainer {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+}
+
+.searchedPostsheading {
+  margin-top: -0.5%;
+  margin-left: 13%;
+  align-self: flex-start;
+  margin-bottom: 3%;
+}
+.no-posts-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.no-posts-image {
+  height: 50%;
+  width: 50%;
+}

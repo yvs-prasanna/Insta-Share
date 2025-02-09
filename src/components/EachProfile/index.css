@@ -1,0 +1,143 @@
+.ProfileHead {
+  margin-top: 7%;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 20%;
+}
+.WholeUserDetailsInProfileHead {
+  display: flex;
+  width: 100%;
+  height: 70%;
+  align-items: center;
+  margin-bottom: 2%;
+}
+.ProfilePicInProfileHead {
+  width: 20%;
+  height: 25%;
+  border-radius: 50%;
+  margin-right: 9%;
+  margin-left: 5%;
+  cursor: pointer;
+}
+.userDetailsInProfilehead {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.followingAndFollowersBlock {
+  width: 100%;
+  display: flex;
+  margin-bottom: -5px;
+}
+.ProfileNameOfUser {
+  font-weight: 400;
+  font-size: 30px;
+  font-family: 'Roboto';
+  margin-bottom: -5px;
+}
+.eachDataInFollowingBlock {
+  margin-right: 15px;
+  font-weight: 450;
+  font-size: 18px;
+}
+.eachBolddataInFollowingBlock {
+  font-weight: 600;
+  margin-right: 5px;
+}
+.story {
+  display: inline-block;
+  margin: 10px;
+  padding: 2px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #11cbff, #ff07d6);
+}
+
+.story-image {
+  display: block;
+  border: 3px solid white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.stories-block {
+  margin-top: 1%;
+  padding-left: 5%;
+  display: flex;
+  align-items: center;
+  margin-left: 1%;
+  margin-bottom: 10px;
+}
+
+.userIdINProfilehead {
+  font-weight: 500;
+  font-size: 25px;
+  font-family: 'Roboto';
+  line-height: 24px;
+  margin-bottom: -4px;
+}
+
+.userBio {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Roboto';
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #c6c6c8;
+  width: 100%;
+  margin: 20px 0;
+  opacity: 0.9;
+}
+
+.postIconWIthPOstspara {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.PostsIcon {
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
+}
+
+.PostsPara {
+  font-size: 20px;
+}
+
+.AllPostsHOlder {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 2%;
+  justify-content: space-between;
+  margin-bottom: 10%;
+}
+
+.eachPost {
+  width: 32%;
+}
+
+.popContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  height: 100%;
+}
+
+.popContainerImage {
+  width: 70%;
+  height: 70%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid #fff;
+}
