@@ -1,4 +1,3 @@
-import React from 'react'
 import './index.css'
 
 const NotFound = props => {
@@ -19,7 +18,11 @@ const NotFound = props => {
           we are sorry, the page you requested could not be found. Please go
           back to the homepage.
         </p>
-        <button onClick={onClickHomePage} className="HomepageButton">
+        <button
+          type="button"
+          onClick={onClickHomePage}
+          className="HomepageButton"
+        >
           Home Page
         </button>
       </div>

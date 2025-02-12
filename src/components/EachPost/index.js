@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import {BsHeart} from 'react-icons/bs'
@@ -55,11 +55,11 @@ const EachPost = props => {
       </div>
       <div className="LikeCommentsHolder">
         {isLiked ? (
-          <button>
+          <button type="button">
             <FcLike data-testid="likeIcon" onClick={onChangeLikeStatus} />
           </button>
         ) : (
-          <button>
+          <button type="button">
             <BsHeart data-testid="unLikeIcon" onClick={onChangeLikeStatus} />
           </button>
         )}

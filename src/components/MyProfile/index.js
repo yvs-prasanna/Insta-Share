@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
-import {PulseLoader} from 'react-spinners'
+import Loader from 'react-loader-spinner'
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import EachProfile from '../EachProfile'
 import './index.css'
 
@@ -35,12 +36,13 @@ const MyProfile = () => {
       <Header />
       {loading ? (
         <div className="LoaderContainer">
-          <PulseLoader
+          <Loader
             className="loader"
             color="#4094EF"
             loading={loading}
             size={15}
             margin={2}
+            type="TailSpin"
           />
         </div>
       ) : (

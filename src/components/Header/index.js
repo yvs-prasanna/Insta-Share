@@ -62,7 +62,11 @@ class Header extends Component {
                   className="searchInput"
                   onKeyDown={this.onKeydownEvent}
                 />
-                <button data-testid="searchIcon" className="searchImage">
+                <button
+                  type="button"
+                  data-testid="searchIcon"
+                  className="searchImage"
+                >
                   <FaSearch onClick={this.onHandleSearch} />
                 </button>
               </div>
@@ -89,7 +93,11 @@ class Header extends Component {
                 </Link>
               </ul>
 
-              <button className="logoutButton" onClick={this.onClickLogout}>
+              <button
+                type="button"
+                className="logoutButton"
+                onClick={this.onClickLogout}
+              >
                 Logout
               </button>
             </div>

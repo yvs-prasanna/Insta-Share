@@ -3,17 +3,19 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Cookies from 'js-cookie'
 import {Link} from 'react-router-dom'
-import Popup from 'reactjs-popup'
 
 import './index.css'
 
-import React, {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 
 function SampleNextArrow(props) {
   const {className, style, onClick} = props
   return (
     <div
       className={className}
+      role="button"
+      tabIndex={0}
+      aria-label="Next Slide"
       style={{
         ...style,
         display: 'block',
@@ -30,6 +32,9 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
+      role="button"
+      tabIndex={0}
+      aria-label="Next Slide"
       style={{
         ...style,
         display: 'block',
@@ -48,14 +53,6 @@ const StoriesCarousal = () => {
     dots: false,
     slidesToShow: 6,
     slidesToScroll: 3,
-    infinite: false,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-  }
-  const mobileSettings = {
-    dots: false,
-    slidesToShow: 4,
-    slidesToScroll: 2,
     infinite: false,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -81,35 +78,18 @@ const StoriesCarousal = () => {
     <>
       <div className="slider-container">
         <Slider {...settings}>
-          {stories.map(each => {
-            return (
-              <div key={each.user_id} className="eachStory">
-                <Popup
-                  modal
-                  trigger={
-                    <img
-                      className="eachStoryImage"
-                      src={each.story_url}
-                      alt="story"
-                    />
-                  }
-                  position="right center"
-                  closeOnDocumentClick
-                >
-                  <div className="popContainer">
-                    <img
-                      className="popContainerImage"
-                      src={each.story_url}
-                      alt="Each Story in Stories"
-                    />
-                  </div>
-                </Popup>
-                <Link to={`/users/${each.user_id}`} className="eachStoryName">
-                  <p>{each.user_name}</p>
-                </Link>
-              </div>
-            )
-          })}
+          {stories.map(each => (
+            <div key={each.user_id} className="eachStory">
+              <img
+                className="eachStoryImage"
+                src={each.story_url}
+                alt="story"
+              />
+              <Link to={`/users/${each.user_id}`} className="eachStoryName">
+                <p>{each.user_name}</p>
+              </Link>
+            </div>
+          ))}
         </Slider>
       </div>
     </>

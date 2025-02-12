@@ -1,7 +1,8 @@
-import React, {useEffect, useState, useContext} from 'react'
+import {useEffect, useState} from 'react'
 import {useLocation} from 'react-router-dom'
 import Cookies from 'js-cookie'
-import {PulseLoader} from 'react-spinners'
+import Loader from 'react-loader-spinner'
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Header from '../Header'
 import EachPost from '../EachPost'
 import './index.css'
@@ -41,11 +42,12 @@ const SearchedPosts = () => {
         <h1 className="searchedPostsheading">Search Results</h1>
         {loading ? (
           <div className="LoaderContainer">
-            <PulseLoader
+            <Loader
               color="#4094EF"
               loading={loading}
               size={15}
               margin={2}
+              type="TailSpin"
             />
           </div>
         ) : (

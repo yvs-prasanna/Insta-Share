@@ -1,6 +1,3 @@
-import React from 'react'
-import Popup from 'reactjs-popup'
-import 'reactjs-popup/dist/index.css'
 import './index.css'
 
 const EachProfile = props => {
@@ -12,26 +9,11 @@ const EachProfile = props => {
     <div className="WholeProflePage">
       <div className="ProfileHead">
         <div className="WholeUserDetailsInProfileHead">
-          <Popup
-            modal
-            trigger={
-              <img
-                className="ProfilePicInProfileHead"
-                src={profile.profile_pic}
-                alt="profilePicINProfilePage"
-              />
-            }
-            position="right center"
-            closeOnDocumentClick
-          >
-            <div className="popContainer">
-              <img
-                className="popContainerImage"
-                src={profile.profile_pic}
-                alt="profilePicINProfilePage"
-              />
-            </div>
-          </Popup>
+          <img
+            className="ProfilePicInProfileHead"
+            src={profile.profile_pic}
+            alt="profilePicINProfilePage"
+          />
 
           <div className="userDetailsInProfilehead">
             <h1 className="ProfileNameOfUser">{profile.user_name}</h1>
@@ -61,28 +43,13 @@ const EachProfile = props => {
         </div>
         <div className="stories-block">
           {profile.stories.map(each => (
-            <Popup
-              modal
-              trigger={
-                <div key={each.id} className="story">
-                  <img
-                    src={each.image}
-                    alt="story-each-profile"
-                    className="story-image"
-                  />
-                </div>
-              }
-              position="right center"
-              closeOnDocumentClick
-            >
-              <div className="popContainer">
-                <img
-                  className="popContainerImage"
-                  src={each.image}
-                  alt="eachStory"
-                />
-              </div>
-            </Popup>
+            <div key={each.id} className="story">
+              <img
+                src={each.image}
+                alt="story-each-profile"
+                className="story-image"
+              />
+            </div>
           ))}
         </div>
         <hr />

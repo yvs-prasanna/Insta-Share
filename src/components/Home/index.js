@@ -1,7 +1,8 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
-import {PulseLoader} from 'react-spinners'
+import Loader from 'react-loader-spinner'
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Header from '../Header'
 import EachPost from '../EachPost'
 import StoriesCarousal from '../StoriesCarousal'
@@ -40,18 +41,18 @@ class Home extends Component {
         <Header />
         <StoriesCarousal />
         {isLoading ? (
-          <div data-testid="loader" className="LoaderContainer">
-            <PulseLoader
+          <div className="LoaderContainer">
+            <Loader
+              data-testid="loader"
               color="#4094EF"
               loading={isLoading}
               size={15}
               margin={2}
+              type="TailSpin"
             />
           </div>
         ) : (
-          posts.map(each => {
-            return <EachPost key={each.post_id} post={each} />
-          })
+          posts.map(each => <EachPost key={each.post_id} post={each} />)
         )}
       </div>
     )
