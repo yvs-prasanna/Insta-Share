@@ -75,14 +75,14 @@
 
 .userIdINProfilehead {
   font-weight: 500;
-  font-size: 25px;
+  font-size: 19px;
   font-family: 'Roboto';
   line-height: 24px;
   margin-bottom: -4px;
 }
 
 .userBio {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
   font-family: 'Roboto';
 }
@@ -105,7 +105,7 @@ hr {
 .PostsIcon {
   height: 30px;
   width: 30px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .PostsPara {
@@ -140,4 +140,10 @@ hr {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border: 2px solid #fff;
+}
+
+.cameraContainer {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 50%;
 }

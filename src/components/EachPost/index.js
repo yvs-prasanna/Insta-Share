@@ -55,16 +55,28 @@ const EachPost = props => {
       </div>
       <div className="LikeCommentsHolder">
         {isLiked ? (
-          <button type="button">
-            <FcLike data-testid="likeIcon" onClick={onChangeLikeStatus} />
+          <button type="button" className="likeButton">
+            <FcLike
+              testid="likeIcon"
+              className="likeIcon"
+              onClick={onChangeLikeStatus}
+            />
           </button>
         ) : (
-          <button type="button">
-            <BsHeart data-testid="unLikeIcon" onClick={onChangeLikeStatus} />
+          <button
+            type="button"
+            className="likeButton"
+            onClick={onChangeLikeStatus}
+          >
+            <BsHeart className="likeIcon" testid="unLikeIcon" />
           </button>
         )}
-        <FaRegComment />
-        <BiShareAlt />
+        <button type="button" testid="searchIcon">
+          <FaRegComment />
+        </button>
+        <button type="button" testid="searchIcon">
+          <BiShareAlt />
+        </button>
       </div>
       <p className="noOfLikes">{post.likes_count} likes</p>
       <p className="postCaption">{post.post_details.caption}</p>

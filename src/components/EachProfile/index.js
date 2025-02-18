@@ -1,3 +1,5 @@
+import {BsGrid3X3} from 'react-icons/bs'
+import {BiCamera} from 'react-icons/bi'
 import './index.css'
 
 const EachProfile = props => {
@@ -5,6 +7,28 @@ const EachProfile = props => {
   if (!profile || profile.stories == null) {
     return <p>Loading....</p>
   }
+
+  const renderPosts = () => (
+    <div className="AllPostsHOlder">
+      {profile.posts.map(post => (
+        <img
+          key={post.id}
+          src={post.image}
+          alt="user post"
+          className="eachPost"
+        />
+      ))}
+    </div>
+  )
+
+  const renderNoPosts = () => (
+    <div className="NoPosts">
+      <div className="cameraContainer">
+        <BiCamera />
+      </div>
+      <h1>No Posts Yet</h1>
+    </div>
+  )
   return (
     <div className="WholeProflePage">
       <div className="ProfileHead">
@@ -12,7 +36,7 @@ const EachProfile = props => {
           <img
             className="ProfilePicInProfileHead"
             src={profile.profile_pic}
-            alt="profilePicINProfilePage"
+            alt="user profile"
           />
 
           <div className="userDetailsInProfilehead">
@@ -44,33 +68,16 @@ const EachProfile = props => {
         <div className="stories-block">
           {profile.stories.map(each => (
             <div key={each.id} className="story">
-              <img
-                src={each.image}
-                alt="story-each-profile"
-                className="story-image"
-              />
+              <img src={each.image} alt="user story" className="story-image" />
             </div>
           ))}
         </div>
         <hr />
         <div className="postIconWIthPOstspara">
-          <img
-            className="PostsIcon"
-            src="https://res.cloudinary.com/dcj1stgkx/image/upload/v1739092294/PostsIcon_vz7wl9.png"
-            alt="Post With Icon"
-          />
+          <BsGrid3X3 className="PostsIcon" />
           <p className="PostsPara">Posts</p>
         </div>
-        <div className="AllPostsHOlder">
-          {profile.posts.map(post => (
-            <img
-              key={post.id}
-              className="eachPost"
-              src={post.image}
-              alt="PostImage"
-            />
-          ))}
-        </div>
+        {profile.posts.length === 0 ? renderNoPosts() : renderPosts()}
       </div>
     </div>
   )
