@@ -20,6 +20,7 @@ const SearchFunctionality = () => {
   const searchInput = searchParams.get('search')
   const [posts, setPosts] = useState([])
   const [active, setActive] = useState(constants.initial)
+
   const fetchSearchedPosts = async () => {
     setActive(constants.loading)
     const url = `https://apis.ccbp.in/insta-share/posts?search=${searchInput}`
@@ -71,7 +72,7 @@ const SearchFunctionality = () => {
         alt="failure view"
       />
       <h1>Something went wrong. Please try again</h1>
-      <button type="button" onClick={fetchSearchedPosts()}>
+      <button type="button" onClick={fetchSearchedPosts}>
         Try again
       </button>
     </div>

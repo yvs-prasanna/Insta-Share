@@ -52,7 +52,7 @@ const UserProfile = () => {
         alt="failure view"
       />
       <h1>Something went wrong. Please try again</h1>
-      <button type="button" onClick={fetchUserProfile()}>
+      <button type="button" onClick={fetchUserProfile}>
         Try again
       </button>
     </div>
