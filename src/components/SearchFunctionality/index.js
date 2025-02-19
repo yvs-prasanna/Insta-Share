@@ -50,7 +50,7 @@ const SearchFunctionality = () => {
 
   const renderSuccess = () => (
     <>
-      {!searchInput || posts.length === 0 ? (
+      {posts.length === 0 ? (
         <>
           <img
             src="https://res.cloudinary.com/dcj1stgkx/image/upload/v1739094551/NopostsWhenSearch_mpgo4f.png"

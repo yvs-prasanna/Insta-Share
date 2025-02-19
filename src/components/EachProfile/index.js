@@ -75,7 +75,7 @@ const EachProfile = props => {
         <hr />
         <div className="postIconWIthPOstspara">
           <BsGrid3X3 className="PostsIcon" />
-          <p className="PostsPara">Posts</p>
+          <h1 className="PostsPara">Posts</h1>
         </div>
         {profile.posts.length === 0 ? renderNoPosts() : renderPosts()}
       </div>

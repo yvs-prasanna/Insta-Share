@@ -9,9 +9,9 @@ class Header extends Component {
   state = {searchInput: '', isDropDownOpen: false}
 
   onClickLogout = () => {
-    const {history} = this.props
     Cookies.remove('jwt_token')
-    history.push('/login')
+    const {history} = this.props
+    history.replace('/login')
   }
 
   onChangeSearchInput = event => {
@@ -95,42 +95,6 @@ class Header extends Component {
             >
               Logout
             </button>
-          </div>
-          <div className="mobile-nav">
-            <button
-              type="button"
-              className="hamburger"
-              onClick={this.toggleDropdown}
-            >
-              <FaBars />
-            </button>
-
-            {/* Dropdown Menu */}
-            {isDropDownOpen && (
-              <div className="dropdown-menu">
-                <Link
-                  to="/"
-                  className="dropdown-item"
-                  onClick={this.toggleDropdown}
-                >
-                  Home
-                </Link>
-                <Link
-                  to="/my-profile"
-                  className="dropdown-item"
-                  onClick={this.toggleDropdown}
-                >
-                  Profile
-                </Link>
-                <button
-                  type="button"
-                  className="dropdown-item logout"
-                  onClick={this.onClickLogout}
-                >
-                  Logout
-                </button>
-              </div>
-            )}
           </div>
         </div>
       </div>

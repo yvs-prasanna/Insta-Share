@@ -3,6 +3,8 @@ import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
+import {BiCamera} from 'react-icons/bi'
+import {BsGrid3X3} from 'react-icons/bs'
 import EachProfile from '../EachProfile'
 import './index.css'
 
@@ -46,7 +48,81 @@ const MyProfile = () => {
     return <Redirect to="/login" />
   }
 
-  const renderMyProfile = () => <EachProfile profile={profile} />
+  const renderMyProfile = () => {
+    const renderPosts = () => (
+      <div className="AllPostsHOlder">
+        {profile.posts.map(post => (
+          <img
+            key={post.id}
+            src={post.image}
+            alt="my post"
+            className="eachPost"
+          />
+        ))}
+      </div>
+    )
+
+    const renderNoPosts = () => (
+      <div className="NoPosts">
+        <div className="cameraContainer">
+          <BiCamera />
+        </div>
+        <h1>No Posts Yet</h1>
+      </div>
+    )
+    return (
+      <div className="WholeProflePage">
+        <div className="ProfileHead">
+          <div className="WholeUserDetailsInProfileHead">
+            <img
+              className="ProfilePicInProfileHead"
+              src={profile.profile_pic}
+              alt="my profile"
+            />
+
+            <div className="userDetailsInProfilehead">
+              <h1 className="ProfileNameOfUser">{profile.user_name}</h1>
+              <div className="followingAndFollowersBlock">
+                <p className="eachDataInFollowingBlock">
+                  <span className="eachBolddataInFollowingBlock">
+                    {profile.posts_count}
+                  </span>
+                  posts
+                </p>
+                <p className="eachDataInFollowingBlock">
+                  <span className="eachBolddataInFollowingBlock">
+                    {profile.followers_count}
+                  </span>
+                  followers
+                </p>
+                <p className="eachDataInFollowingBlock">
+                  <span className="eachBolddataInFollowingBlock">
+                    {profile.following_count}
+                  </span>
+                  following
+                </p>
+              </div>
+              <p className="userIdINProfilehead">{profile.user_id}</p>
+              <p className="userBio">{profile.user_bio}</p>
+            </div>
+          </div>
+          <div className="stories-block">
+            {profile.stories.map(each => (
+              <div key={each.id} className="story">
+                <img src={each.image} alt="my story" className="story-image" />
+              </div>
+            ))}
+          </div>
+          <hr />
+          <div className="postIconWIthPOstspara">
+            <BsGrid3X3 className="PostsIcon" />
+            <h1 className="PostsPara">Posts</h1>
+          </div>
+          {profile.posts.length === 0 ? renderNoPosts() : renderPosts()}
+        </div>
+      </div>
+    )
+  }
 
   const renderFailure = () => (
     <div className="FailurePage">

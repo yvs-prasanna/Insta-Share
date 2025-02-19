@@ -126,10 +126,10 @@ class Home extends Component {
       prevArrow: <SamplePrevArrow />,
     }
     return (
-      <div className="slider-container">
+      <ul className="slider-container">
         <Slider {...settings}>
           {stories.map(each => (
-            <div key={each.user_id} className="eachStory">
+            <li key={each.user_id} className="eachStory">
               <img
                 className="eachStoryImage"
                 src={each.story_url}
@@ -138,10 +138,10 @@ class Home extends Component {
               <Link to={`/users/${each.user_id}`} className="eachStoryName">
                 <p>{each.user_name}</p>
               </Link>
-            </div>
+            </li>
           ))}
         </Slider>
-      </div>
+      </ul>
     )
   }
 
@@ -161,7 +161,7 @@ class Home extends Component {
   renderStoriesSection = () => {
     const {storiesCheck} = this.state
     switch (storiesCheck) {
-      case 'LOADING':
+      case constants.loading:
         return this.renderStoriesLoading()
       case 'SS':
         return this.renderCarousel()

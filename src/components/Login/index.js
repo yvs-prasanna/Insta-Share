@@ -15,8 +15,8 @@ class Login extends Component {
   }
 
   onSubmitSuccess = jwtToken => {
-    const {history} = this.props
     Cookies.set('jwt_token', jwtToken, {expires: 100})
+    const {history} = this.props
     history.replace('/')
   }
 
@@ -63,8 +63,8 @@ class Login extends Component {
             <form className="loginForm" onSubmit={this.onSubmitForm}>
               <div className="logoHandler">
                 <img
-                  alt="LogoINLoginForm"
-                  className="website logo"
+                  alt="website logo"
+                  className="logoImg"
                   src="https://res.cloudinary.com/dcj1stgkx/image/upload/v1735661130/logo_m1erel.png"
                 />
                 <h2>Insta Share</h2>

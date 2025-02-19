@@ -55,20 +55,17 @@ const EachPost = props => {
       </div>
       <div className="LikeCommentsHolder">
         {isLiked ? (
-          <button type="button" className="likeButton">
-            <FcLike
-              testid="likeIcon"
-              className="likeIcon"
-              onClick={onChangeLikeStatus}
-            />
+          <button type="button" className="likeButton" testid="likeIcon">
+            <FcLike className="likeIcon" onClick={onChangeLikeStatus} />
           </button>
         ) : (
           <button
             type="button"
             className="likeButton"
             onClick={onChangeLikeStatus}
+            testid="unLikeIcon"
           >
-            <BsHeart className="likeIcon" testid="unLikeIcon" />
+            <BsHeart className="likeIcon" />
           </button>
         )}
         <button type="button" testid="searchIcon">
