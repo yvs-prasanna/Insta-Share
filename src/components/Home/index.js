@@ -6,6 +6,7 @@ import Loader from 'react-loader-spinner'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Header from '../Header'
 import EachPost from '../EachPost'
+import SearchFunctionality from '../SearchFunctionality'
 
 import './index.css'
 
@@ -61,13 +62,39 @@ class Home extends Component {
     posts: [],
     postsCheck: constants.initial,
     storiesCheck: constants.initial,
-
     stories: [],
+    searchActive: false,
+    searchInput: '',
   }
 
   componentDidMount() {
-    this.getStories()
-    this.getPosts()
+    this.checkSearchQuery()
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const prevSearch = new URLSearchParams(prevProps.location.search).get(
+      'search',
+    )
+    const currentSearch = new URLSearchParams(window.location.search).get(
+      'search',
+    )
+
+    if (prevSearch !== currentSearch) {
+      this.checkSearchQuery()
+    }
+  }
+
+  checkSearchQuery = () => {
+    const searchParams = new URLSearchParams(window.location.search)
+    const searchQuery = searchParams.get('search')
+
+    if (searchQuery) {
+      this.setState({searchActive: true, searchInput: searchQuery})
+    } else {
+      this.setState({searchActive: false})
+      this.getStories()
+      this.getPosts()
+    }
   }
 
   getPosts = async () => {
@@ -166,7 +193,7 @@ class Home extends Component {
       case 'SS':
         return this.renderCarousel()
       case 'SF':
-        return this.renderFailure()
+        return this.renderStoriesFailure()
       default:
         return null
     }
@@ -175,18 +202,18 @@ class Home extends Component {
   renderPosts = () => {
     const {posts} = this.state
     return (
-      <div className="postsContainer">
+      <ul className="postsContainer">
         {posts.map(each => (
           <EachPost key={each.post_id} post={each} />
         ))}
-      </div>
+      </ul>
     )
   }
 
   renderPostsSection = () => {
     const {postsCheck} = this.state
     switch (postsCheck) {
-      case 'LOADING':
+      case constants.loading:
         return this.renderLoading()
       case 'PS':
         return this.renderPosts()
@@ -222,17 +249,24 @@ class Home extends Component {
     </div>
   )
 
+  renderSearchResults = () => {
+    const {searchInput} = this.state
+    return <SearchFunctionality searchInput={searchInput} />
+  }
+
   render() {
-    const {storiesCheck} = this.state
+    const {storiesCheck, searchActive} = this.state
     if (Cookies.get('jwt_token') === undefined) {
       return <Redirect to="/login" />
     }
     return (
       <div className="WholeHomePage">
         <Header />
-        {storiesCheck === 'SF' ? (
-          this.renderStoriesFailure()
-        ) : (
+        {searchActive && this.renderSearchResults()}
+
+        {!searchActive && storiesCheck === 'SF' && this.renderStoriesFailure()}
+
+        {!searchActive && storiesCheck !== 'SF' && (
           <>
             {this.renderStoriesSection()}
             {this.renderPostsSection()}

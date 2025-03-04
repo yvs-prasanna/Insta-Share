@@ -60,7 +60,7 @@ class Login extends Component {
               alt="website login"
               src="https://res.cloudinary.com/dcj1stgkx/image/upload/v1738948821/Illustration_sayk1a.jpg"
             />
-            <form className="loginForm" onSubmit={this.onSubmitForm}>
+            <form className="loginForm">
               <div className="logoHandler">
                 <img
                   alt="website logo"
@@ -86,7 +86,11 @@ class Login extends Component {
                 type="password"
               />
               {isShow ? <p className="message">{errorMsg}</p> : ''}
-              <button type="submit" className="login-button">
+              <button
+                type="submit"
+                className="login-button"
+                onClick={this.onSubmitForm}
+              >
                 login
               </button>
             </form>

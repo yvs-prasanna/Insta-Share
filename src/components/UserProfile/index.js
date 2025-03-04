@@ -51,7 +51,7 @@ const UserProfile = () => {
         src="https://res.cloudinary.com/dcj1stgkx/image/upload/v1739721210/alert-triangle_qpz8yo.png"
         alt="failure view"
       />
-      <h1>Something went wrong. Please try again</h1>
+      <p>Something went wrong. Please try again</p>
       <button type="button" onClick={fetchUserProfile}>
         Try again
       </button>

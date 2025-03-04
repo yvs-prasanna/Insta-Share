@@ -1,5 +1,4 @@
 import {useEffect, useState} from 'react'
-import {useLocation} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
@@ -14,10 +13,8 @@ const constants = {
   failure: 'FAILURE',
 }
 
-const SearchFunctionality = () => {
-  const location = useLocation()
-  const searchParams = new URLSearchParams(location.search)
-  const searchInput = searchParams.get('search')
+const SearchFunctionality = props => {
+  const {searchInput} = props
   const [posts, setPosts] = useState([])
   const [active, setActive] = useState(constants.initial)
 
@@ -60,7 +57,11 @@ const SearchFunctionality = () => {
           <p>Try different keyword or search again</p>
         </>
       ) : (
-        posts.map(post => <EachPost key={post.post_id} post={post} />)
+        <ul className="postsinSearch">
+          {posts.map(post => (
+            <EachPost key={post.post_id} post={post} />
+          ))}
+        </ul>
       )}
     </>
   )

@@ -65,13 +65,13 @@ const EachProfile = props => {
             <p className="userBio">{profile.user_bio}</p>
           </div>
         </div>
-        <div className="stories-block">
+        <ul className="stories-block">
           {profile.stories.map(each => (
-            <div key={each.id} className="story">
+            <li key={each.id} className="story">
               <img src={each.image} alt="user story" className="story-image" />
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
         <hr />
         <div className="postIconWIthPOstspara">
           <BsGrid3X3 className="PostsIcon" />

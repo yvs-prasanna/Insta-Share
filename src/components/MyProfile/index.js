@@ -5,7 +5,6 @@ import Loader from 'react-loader-spinner'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import {BiCamera} from 'react-icons/bi'
 import {BsGrid3X3} from 'react-icons/bs'
-import EachProfile from '../EachProfile'
 import './index.css'
 
 import Header from '../Header'
@@ -50,16 +49,18 @@ const MyProfile = () => {
 
   const renderMyProfile = () => {
     const renderPosts = () => (
-      <div className="AllPostsHOlder">
+      <ul className="AllPostsHOlder">
         {profile.posts.map(post => (
-          <img
-            key={post.id}
-            src={post.image}
-            alt="my post"
-            className="eachPost"
-          />
+          <li className="eachPost">
+            <img
+              className="eachPostImg"
+              key={post.id}
+              src={post.image}
+              alt="my post"
+            />
+          </li>
         ))}
-      </div>
+      </ul>
     )
 
     const renderNoPosts = () => (
@@ -106,13 +107,13 @@ const MyProfile = () => {
               <p className="userBio">{profile.user_bio}</p>
             </div>
           </div>
-          <div className="stories-block">
+          <ul className="stories-block">
             {profile.stories.map(each => (
-              <div key={each.id} className="story">
+              <li key={each.id} className="story">
                 <img src={each.image} alt="my story" className="story-image" />
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
           <hr />
           <div className="postIconWIthPOstspara">
             <BsGrid3X3 className="PostsIcon" />
@@ -130,7 +131,7 @@ const MyProfile = () => {
         src="https://res.cloudinary.com/dcj1stgkx/image/upload/v1739721210/alert-triangle_qpz8yo.png"
         alt="failure view"
       />
-      <h1>Something went wrong. Please try again</h1>
+      <p>Something went wrong. Please try again</p>
       <button type="button" onClick={fetchMyProfile}>
         Try again
       </button>

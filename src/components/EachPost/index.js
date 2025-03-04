@@ -36,7 +36,7 @@ const EachPost = props => {
   }
 
   return (
-    <div className="WholePost">
+    <li className="WholePost">
       <div className="UserNameOnPostWithImageDiv">
         <div className="ImageContainer">
           <img
@@ -84,7 +84,7 @@ const EachPost = props => {
         </p>
       ))}
       <p className="PostedTime">{post.created_at}</p>
-    </div>
+    </li>
   )
 }
 
